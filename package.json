@@ -1,0 +1,43 @@
+{
+  "name": "test",
+  "version": "1.0.0-dev",
+  "private": true,
+  "dependencies": {
+    "@remix-run/architect": "1.13.0",
+    "@remix-run/node": "1.13.0",
+    "@remix-run/react": "1.13.0",
+    "@remix-run/serve": "1.13.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-apigatewaymanagementapi": "3.272.0",
+    "@aws-sdk/client-dynamodb": "3.272.0",
+    "@aws-sdk/client-sns": "3.272.0",
+    "@aws-sdk/client-sqs": "3.272.0",
+    "@aws-sdk/client-ssm": "3.272.0",
+    "@aws-sdk/lib-dynamodb": "3.272.0",
+    "@remix-run/dev": "1.13.0",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "@types/react-router-dom": "5.3.3",
+    "concurrently": "7.6.0",
+    "cross-env": "7.0.3",
+    "process": "0.11.10",
+    "serverless": "3.27.0",
+    "serverless-certificate-creator": "1.6.0",
+    "serverless-domain-manager": "6.4.2",
+    "serverless-esbuild": "1.37.3",
+    "serverless-offline": "12.0.4",
+    "serverless-plugin-scripts": "1.0.2",
+    "serverless-s3-deploy": "0.10.1",
+    "serverless-s3-sync": "3.1.0"
+  },
+  "scripts": {
+    "prebuild": "rimraf ./server/build ./public/static",
+    "build": "remix build",
+    "start": "cross-env IS_OFFLINE=1 NODE_ENV=development INLINE_RUNTIME_CHUNK=false npm run start:offline",
+    "remix": "remix dev",
+    "start:offline": "sls offline start --stage dev --noTimeout --disableCookieValidation"
+  }
+}

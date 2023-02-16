@@ -1,0 +1,16 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+.env
+
+# build
+/server/build
+/public/static
+.esbuild
+
+# Other
+.DS_Store
+.cache
